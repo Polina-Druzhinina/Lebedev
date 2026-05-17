@@ -6,9 +6,10 @@ private:
     double a,b,c;
 public:
     Parabola(double x, double a, double b, double c, double left, double right);
+    void name();
     double valueFunction();
     double searcheMin();
     double searcheMax();
-    string integration();
+    double integration();
     double differentiation();
 };

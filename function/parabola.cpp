@@ -2,6 +2,10 @@
 
 Parabola::Parabola(double x, double a, double b, double c, double left, double right): Function(x, left, right), a(a), b(b), c(c) {};
 
+void Parabola::name(){
+    cout<<"Parabola"<<endl;
+}
+
 double Parabola::valueFunction(){
     return a*x*x + b*x + c;
 }
@@ -30,8 +34,10 @@ double Parabola::searcheMax(){
     return max;
 }
 
-string Parabola::integration(){
-    return "(a*x^3) / 3 + (b*x^2)/2 + c*x + C";
+double Parabola::integration(){
+    double fRight = a*right*right*right / 3.0 + b*right*right / 2.0 + c*right;
+    double fLeft = a*left*left*left / 3.0 + b*left*left / 2.0 + c*left;
+    return fRight - fLeft;
 }
 
 double Parabola::differentiation(){
